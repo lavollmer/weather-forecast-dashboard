@@ -3,16 +3,43 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Document</title>
+  <title>Weather Forecast Dashboard</title>
 </head>
 
 <body>
-  <h1>Hello World</h1>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+        <h1>Weather Dashboard</h1>
+      </div>
+      <div class="col-3" style="padding: 5px;">
+        <h4 style="text-align: left;">Search for a City:</h4>
+        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+        <input style="width: 95%; margin: 5px;" class="btn btn-primary" type="submit" value="Search">
+        <p id="line"></p>
+      </div>
+      <div id="borderbox" class="col-9">Weather
+        <p id="line"></p>
+      </div>
 
-
+      <div class="col" id="cityLocation"></div>
+    </div>
+    <div class="row">
+      <div class="col-3" id="cityList">List of Cities
+        <p>
+          <button type="button" style="width: 95%; margin: 5px;" class="btn btn-secondary" disabled>Previous City
+            Name</button>
+        </p>
+      </div>
+      <div class="col-9" id="fiveDayForecast">5 Day Forecast</div>
+    </div>
+  </div>
 </body>
+<script src="path/to/dayjs/dayjs.min.js"></script>
 <script src="./assets/javascript/javascript.js"></script>
 
 </html>
