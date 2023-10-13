@@ -1,8 +1,8 @@
-var APIKey = '6ff33c0653b3c13e330cc0ca224708a4';
+var APIKey = '02198656acbfe2c2afe6c0d052bc513c';
 var city = 'London';
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
-fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=6ff33c0653b3c13e330cc0ca224708a4")
+fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=02198656acbfe2c2afe6c0d052bc513c")
   .then(function (response) {
     return response.json()
   })
@@ -15,7 +15,7 @@ fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=6ff33
   })
   .then(function (coolDataFromAbove) {
     // use the latitude and longitude for the next fetch call
-    fetch("api.openweathermap.org/data/2.5/forecast?lat=latitude&lon=long&appid=6ff33c0653b3c13e330cc0ca224708a4")
+    fetch("api.openweathermap.org/data/2.5/forecast?lat=latitude&lon=long&appid=02198656acbfe2c2afe6c0d052bc513c")
       .then(function (response) {
         return response.json()
       })
