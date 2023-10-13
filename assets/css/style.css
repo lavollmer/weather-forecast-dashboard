@@ -28,7 +28,7 @@ h2 {
   padding: 0px;
 }
 
-div#fiveDayforecast.col-9 {
+div#fiveDayForecast {
   display: flex;
   flex-direction: column;
   justify-content: left;

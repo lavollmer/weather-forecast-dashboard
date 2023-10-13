@@ -36,6 +36,8 @@ function searchWeather(city) {
             console.log(day);
             var fiveDate = $("<p>").text(dayjs.unix(finalData.list[i].dt).format("MM / DD / YYYY"))
             $("#fiveDayForecast").append(fiveDate)
+            var fiveIcon = $("<p>").attr("src", "https://openweathermap.org/img/wn/" + finalData.list[0].weather[0].icon + ".png")
+            $("#fiveDayForecast").append(fiveIcon)
             var fiveTemp = $("<p>").text(weather.temp + " F");
             $("#fiveDayForecast").append(fiveTemp)
             var fiveWind = $("<p>").text(finalData.list[0].wind.speed + " MPH");
