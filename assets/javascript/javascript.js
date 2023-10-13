@@ -1,6 +1,6 @@
 var APIKey = '6ff33c0653b3c13e330cc0ca224708a4';
-var city = '';
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+var city = 'london';
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
 fetch(queryURL)
   .then(function (response) {
