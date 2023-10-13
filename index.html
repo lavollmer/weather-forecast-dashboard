@@ -19,15 +19,15 @@
       </div>
       <div class="col-3" style="padding: 5px;">
         <h4 id="primary-city" style="text-align: left;">Search for a City:</h4>
-        <input class="form-control" id="cityName" type="text" placeholder="Default input"
+        <input class="form-control" id="cityName" type="text" placeholder="i.e. London"
           aria-label="default input example">
         <input style="width: 95%; margin: 5px;" class="btn btn-primary" type="submit" value="Search">
         <p id="line"></p>
       </div>
       <div id="borderbox" class="col-9">
+        <p id="city" style="font-weight: bold;font-size: 30px;""></p>
+        <p id=" date"></p>
         <img id="icon">
-        <p id="city"></p>
-        <p id="date"></p>
         <p id="temp"></p>
         <p id="wind"></p>
         <p id="humidity"></p>
@@ -42,7 +42,9 @@
             Name</button>
         </p>
       </div>
-      <div class="col-9" id="fiveDayForecast">5 Day Forecast</div>
+      <div class="col-9" id="fiveDayForecast">
+        <h2>5 Day Forecast</h2>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
