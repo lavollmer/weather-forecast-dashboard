@@ -26,11 +26,11 @@ function searchWeather(city) {
           console.log(finalData);
           var weather = finalData.list[0].main;
           $("#city").text(finalData.city.name)
-          $("#date").text(dayjs.unix(finalData.list[0].dt).format("MM / DD / YYYY"))
+          $("#date").text(dayjs.unix(finalData.list[0].dt).format("(MM / DD / YYYY)"))
           $("#icon").attr("src", "https://openweathermap.org/img/wn/" + finalData.list[0].weather[0].icon + ".png")
-          $("#temp").text(weather.temp + " F");
-          $("#wind").text(finalData.list[0].wind.speed + " MPH");
-          $("#humidity").text(weather.humidity + " %");
+          $("#temp").text("Temperature: " + weather.temp + " F");
+          $("#wind").text("Wind: " + finalData.list[0].wind.speed + " MPH");
+          $("#humidity").text("Humidity: " + weather.humidity + " %");
           for (var i = 8; i < finalData.list.length; i += 8) {
             var day = finalData.list[i];
             console.log(day);
@@ -38,11 +38,11 @@ function searchWeather(city) {
             $("#fiveDayForecast").append(fiveDate)
             var fiveIcon = $("<p>").attr("src", "https://openweathermap.org/img/wn/" + finalData.list[0].weather[0].icon + ".png")
             $("#fiveDayForecast").append(fiveIcon)
-            var fiveTemp = $("<p>").text(weather.temp + " F");
+            var fiveTemp = $("<p>").text("Temperature: " + weather.temp + " F");
             $("#fiveDayForecast").append(fiveTemp)
-            var fiveWind = $("<p>").text(finalData.list[0].wind.speed + " MPH");
+            var fiveWind = $("<p>").text("Wind: " + finalData.list[0].wind.speed + " MPH");
             $("#fiveDayForecast").append(fiveWind)
-            var fiveHumidity = $("<p>").text(weather.humidity + " %");
+            var fiveHumidity = $("<p>").text("Humidity: " + weather.humidity + " %");
             $("#fiveDayForecast").append(fiveHumidity)
           }
           console.log(weather);

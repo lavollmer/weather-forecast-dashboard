@@ -14,6 +14,25 @@ p#city {
   justify-content: left;
 }
 
+p#wind {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+p#temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+}
+
+p#humidity {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
 #fiveDayForecast {
   display: flex;
   flex-direction: column;
@@ -33,4 +52,30 @@ div#fiveDayForecast {
   flex-direction: column;
   justify-content: left;
   padding: 0px;
+}
+
+p#date {
+  color: black;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+div#titleLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 5px;
+}
+
+div#weatherThings {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  font-size: 20px;
+  padding: 5px;
 }
