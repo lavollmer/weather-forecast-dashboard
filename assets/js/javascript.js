@@ -22,28 +22,29 @@ function searchWeather(city) {
           return response.json()
         })
         .then(function (finalData) {
-          // Here is your final data!!
+          //final data
           console.log(finalData);
           var weather = finalData.list[0].main;
           $("#city").text(finalData.city.name)
-          $("#date").text(dayjs.unix(finalData.list[0].dt).format("(MM / DD / YYYY)"))
+          $("#date").text(dayjs.unix(finalData.list[0].dt).format("(MM/DD/YYYY)"))
           $("#icon").attr("src", "https://openweathermap.org/img/wn/" + finalData.list[0].weather[0].icon + ".png")
           $("#temp").text("Temperature: " + weather.temp + " F");
           $("#wind").text("Wind: " + finalData.list[0].wind.speed + " MPH");
           $("#humidity").text("Humidity: " + weather.humidity + " %");
+          //five day forecast
           for (var i = 8; i < finalData.list.length; i += 8) {
             var day = finalData.list[i];
             console.log(day);
-            var fiveDate = $("<p>").text(dayjs.unix(finalData.list[i].dt).format("MM / DD / YYYY"))
-            $("#fiveDayForecast").append(fiveDate)
+            var fiveDate = $("<p>").text(dayjs.unix(finalData.list[i].dt).format("(MM/DD/YYYY)"))
+            $("#weatherInfo").append(fiveDate)
             var fiveIcon = $("<p>").attr("src", "https://openweathermap.org/img/wn/" + finalData.list[0].weather[0].icon + ".png")
-            $("#fiveDayForecast").append(fiveIcon)
+            $("#weatherInfo").append(fiveIcon)
             var fiveTemp = $("<p>").text("Temperature: " + weather.temp + " F");
-            $("#fiveDayForecast").append(fiveTemp)
+            $("#weatherInfo").append(fiveTemp)
             var fiveWind = $("<p>").text("Wind: " + finalData.list[0].wind.speed + " MPH");
-            $("#fiveDayForecast").append(fiveWind)
+            $("#weatherInfo").append(fiveWind)
             var fiveHumidity = $("<p>").text("Humidity: " + weather.humidity + " %");
-            $("#fiveDayForecast").append(fiveHumidity)
+            $("#weatherInfo").append(fiveHumidity)
           }
           console.log(weather);
           return weather;
@@ -61,3 +62,5 @@ $(".btn-primary").click(function (event) {
   //stores btnSave which is the text in local storage under "info" key
   // localStorage.setItem(city), btnSave)
 });
+
+// localStorage.setItem('compressedfunc', myFunction.toString());
