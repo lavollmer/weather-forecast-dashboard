@@ -1,5 +1,4 @@
 const APIKey = '02198656acbfe2c2afe6c0d052bc513c';
-var city = [''];
 
 function searchWeather(city) {
   fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=02198656acbfe2c2afe6c0d052bc513c")
@@ -52,23 +51,26 @@ function searchWeather(city) {
         })
     });
 }
-//save info in local storage
+//event listener
 $(".btn-primary").click(function (event) {
   event.preventDefault();
   console.log("click");
-  // var btnCityPrimary = $(this).siblings(".form-control").val();
   var city = $("#cityName").val();
   console.log(city);
   searchWeather(city);
-  //stores btnSave which is the text in local storage under "info" key
-  // localStorage.setItem(city), btnSave)
 
+
+  //stores  in local storage under "cityHistory" key
   const weatherHis = localStorage.setItem("cityHistory", city);
-  var cityWeather = JSON.parse(localStorage.getItem("cityHistory"));
+  var cityWeather = JSON.parse(localStorage.getItem(weatherHis));
+  var cityWeatherStorage = cityWeather.push();
+  var updatedWeather = JSON.stringify(cityWeatherStorage)
+  localStorage.setItem("cityHistory", updatedWeather);
 });
 
-// localStorage.setItem('compressedfunc', myFunction.toString());
-// const history = $("#cityName").val();
-// var city = $("#cityName").val();
-// const weatherHis = localStorage.setItem("cityHistory", city);
-// var cityWeather = JSON.parse(localStorage.getItem("cityHistory"));
+// var myFunctionWeather = searchWeather(city).toString();
+// localStorage.setItem('compressedFunct', myFunctionWeather);
+
+// var storedFunction = localStorage.getItem("compressedFunct");
+// var storedFunct = new Function(myFunctionWeather);
+// myFunctionWeather();
