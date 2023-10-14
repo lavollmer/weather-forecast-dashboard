@@ -1,4 +1,5 @@
 const APIKey = '02198656acbfe2c2afe6c0d052bc513c';
+var city = [''];
 
 function searchWeather(city) {
   fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=02198656acbfe2c2afe6c0d052bc513c")
@@ -61,6 +62,13 @@ $(".btn-primary").click(function (event) {
   searchWeather(city);
   //stores btnSave which is the text in local storage under "info" key
   // localStorage.setItem(city), btnSave)
+
+  const weatherHis = localStorage.setItem("cityHistory", city);
+  var cityWeather = JSON.parse(localStorage.getItem("cityHistory"));
 });
 
 // localStorage.setItem('compressedfunc', myFunction.toString());
+// const history = $("#cityName").val();
+// var city = $("#cityName").val();
+// const weatherHis = localStorage.setItem("cityHistory", city);
+// var cityWeather = JSON.parse(localStorage.getItem("cityHistory"));
