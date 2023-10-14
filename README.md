@@ -8,9 +8,9 @@ This project utilizes APIs, bootstrap, dayjs for technical components.
 
 A way to improve this project would include adding a cam view of a current location in the city to display weather (similiar to TV news weather reports).
 ## usage
-Screenshot:
+Screenshot:![website screenshot](./assets/images/screenshot.png)
 
-Deployment Link:file:///Users/lauravollmer/Documents/bootcamp/homework/weather-forecast-dashboard/index.html
+Deployment Link:https://github.com/lavollmer/weather-forecast-dashboard
 ## credits
 The project was done in conjunction with the U of MN bootcamp and tutoring services.
 ## license
